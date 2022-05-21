@@ -11,12 +11,12 @@ class SubCategory extends Model
 
     protected $guarded = [];
 
-    public function SubCategory()
+    public function SubCategories()
     {
-        return $this->hasMany(Category::class);
+        return $this->hasMany(Category::class,'subcategories_id','id');
     }
-    public function productCategory()
+    public function products()
     {
-        return $this->hasMany(Product::class);
+        return $this->hasMany(Product::class,'product_id','id');
     }
 }

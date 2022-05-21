@@ -17,6 +17,7 @@ class CreateFeedBacksTable extends Migration
             $table->id();
             $table->foreignId('user_id')->nullable()->references('id')->
             on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('product_id')->nullable()->references('id')->on('products')->onUpdate('cascade')->onDelete('cascade');
             $table->longText('comments');
             $table->timestamps();
         });

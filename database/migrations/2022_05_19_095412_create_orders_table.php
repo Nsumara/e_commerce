@@ -15,7 +15,7 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('categories_id')->nullable()->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('user_id')->nullable()->references('id')->on('Users')->onUpdate('cascade')->onDelete('cascade');
             $table->longText('discription');
             $table->string('discount');
             $table->timestamps();

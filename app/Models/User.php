@@ -43,24 +43,24 @@ class User extends Authenticatable
     ];
 
 
-    public function user(){
-        return $this->hasMany(Category::class);
+    public function categories(){
+        return $this->hasMany(Category::class, 'user_id', 'id');
     }
-    public function userAdmin()
+    public function subcategories()
     {
-        return $this->hasMany(SubCategory::class);
+        return $this->hasMany(SubCategory::class,'subcategories_id','id');
     }
-    public function users()
+    public function products()
     {
-        return $this->hasMany(Product::class);
+        return $this->hasMany(Product::class,'product_id','id');
     }
-    public function userCustomer()
+    public function carts()
     {
-    return $this->hasMany(Cart::class);
+    return $this->hasMany(Cart::class,'cart_id','id');
     }
-    public function usercus()
+    public function feedbacks()
     {
-        return $this->belongsTo(FeedBack::class);
+        return $this->hasMany(FeedBack::class,'feedback_id','id');
     }
     
 }

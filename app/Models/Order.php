@@ -11,11 +11,11 @@ class Order extends Model
 
     protected $guarded = []; 
 
-    public function users(){
-        return $this->belongsToMany(User::class);
+    public function user(){
+        return $this->belongsToMany(User::class,'user_id','id');
     }
-    public function order()
+    public function payment()
     {
-        return $this->belongsTo(Payment::class);
+        return $this->belongsTo(Payment::class,'order_id','id');
     }
 }

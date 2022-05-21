@@ -13,6 +13,6 @@ class Payment extends Model
 
     public function payment()
     {
-        return $this->hasOne(Order::class);
+        return $this->hasOne(Order::class,'order_id','id');
     }
 }

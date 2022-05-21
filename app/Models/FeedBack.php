@@ -10,8 +10,8 @@ class FeedBack extends Model
     use HasFactory;
     protected $guarded = [];
     
-    public function feedback()
+    public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class,'user_id','id');
     }
 }
